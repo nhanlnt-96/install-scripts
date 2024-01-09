@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Update system",
+    "script_string": "sudo apt update -y"
+  },
+  {
+    "name": "Install curl",
+    "script_string": "sudo apt install curl -y"
+  },
+  {
+    "name": "Install NodeJS",
+    "script_string": "sudo apt install nodejs"
+  },
+  {
+    "name": "Install Yarn",
+    "script_string": "npm install --global yarn"
+  },
+  {
+    "name": "Install Docker",
+    "script_string": "sudo apt-get update && sudo apt-get install ca-certificates curl gnupg && sudo install -m 0755 -d /etc/apt/keyrings && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg && sudo chmod a+r /etc/apt/keyrings/docker.gpg && echo \\\n  \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \\\n  $(. /etc/os-release && echo \"$VERSION_CODENAME\") stable\" | \\\n  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"
+  },
+  {
+    "name": "Install MongoDB",
+    "script_string": "docker pull mongodb/mongodb-community-server && docker run --name mongo -dp 27017:27017 mongodb/mongodb-community-server:latest"
+  },
+  {
+    "name": "Install Node Version Manager (NVM)",
+    "script_string": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash && source ~/.bashrc"
+  },
+  {
+    "name": "Install ZSH",
+    "script_string": "sudo apt install zsh"
+  },
+  {
+    "name": "Install oh-my-zsh",
+    "script_string": "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+  },
+  {
+    "name": "Check Node Version Exist",
+    "script_string": "node -v && npm -v"
+  },
+  {
+    "name": "disable-ipv6",
+    "script_string": "sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1; sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1"
+  }
+]
